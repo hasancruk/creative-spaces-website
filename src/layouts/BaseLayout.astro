@@ -1,0 +1,35 @@
+---
+const { title } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ? `Creative Spaces | ${title}` : "Creative Spaces"}</title>
+    <link rel="stylesheet" href="index.css" />
+    <meta
+      name="description"
+      content="This is the landing site of the Creative Spaces Community."
+    />
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <main>
+        <div class="p-4 mx-auto max-w-screen-xl">
+          <slot />
+        </div>
+      </main>
+      <footer class="mt-auto bg-gray-200">
+        <div class="px-4 pt-8 pb-4 mx-auto max-w-screen-xl">
+          <h1 class="text-gray-600">
+            {`Copyright \u00A9 ${year} Creative Spaces`}
+          </h1>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
