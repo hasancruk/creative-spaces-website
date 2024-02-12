@@ -1,0 +1,8 @@
+---
+layout: layouts/base.webc
+---
+<h1 class="sr-only">Creative Spaces for enthusiasts</h1>
+<site-hero></site-hero>
+<p class="hero-body">
+  The web is for everyone! Unleash your creative potential.
+</p>
