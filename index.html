@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="Eleventy v2.0.1">
+    <title>Creative Spaces</title>
+    <meta name="description" content="This is the landing site of the Creative Spaces Community.">
+    <meta name="color-scheme" content="dark light">
+    
+    <style>@layer reset, base, theme, utilities;
+
+@layer reset {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100%;
+    background-color: var(--bg-base);
+
+    /* TODO Is this what I want?  */
+    font-family: "Helvetica Neue", Verdana, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.5rem;
+  }
+
+  svg, video, picture {
+    display: block;
+    max-width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 0.75rem; /* or any other default value */
+  }
+
+  code, kbd, samp, pre {
+    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+    font-size: 1em;
+  }
+}
+
+@layer base {
+  :root {
+    /* Tokens */
+    --text-base: var(--color-base-fg);
+    --text-primary: var(--color-primary);
+    --text-secondary: var(--color-secondary);
+    --text-accent: var(--color-accent);
+          
+    --bg-base: var(--color-base-bg);
+    --bg-section: var(--color-section);
+    --bg-primary: var(--color-primary);
+    --bg-secondary: var(--color-secondary);
+    --bg-accent: var(--color-accent);
+
+    /* Radii */ 
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+
+    /* Breakpoint for reference only because they don't work in media queries */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+
+    /* Global styles */
+    color: var(--text-base);
+    scroll-behavior: smooth;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    margin-block-end: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    color: var(--text-secondary);
+    font-weight: 700;
+    text-decoration-line: underline;
+    text-decoration-thickness: 4px;
+    text-decoration-color: var(--decoration-secondary-inverted);
+    margin-block-end: 0.75rem;
+  }
+
+  ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  ul > li::marker {
+    color: var(--decoration-accent); 
+  }
+
+  a {
+    font-weight: 700;
+    color: var(--text-base);
+    transition: color 150ms ease-in-out;
+  }
+
+  footer {
+    margin-top: auto;
+    background-color: var(--bg-secondary);
+    padding-inline: 1rem;
+    padding-block-start: 2rem;
+    padding-block-end: 1rem;
+  }
+
+  footer > p {
+    color: var(--text-inverted);
+    max-width: var(--breakpoint-xl);
+    margin-inline: auto;
+    margin-block-end: 1rem;
+  }
+
+  .sr-only {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  @media(min-width: 768px) {
+    h1 {
+      font-size: 3rem;
+      line-height: 1;
+      margin-block-end: 2rem;
+    }
+
+    h2 {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      margin-block-end: 1rem;
+    }
+  }
+}
+
+@layer theme {
+  :root {
+    /* COLOR VALUES */
+    /* Green */
+    --_clr-primary: 61.6% 0.104 183.19;
+    /* Light */
+    --_clr-base-bg: 90.51% 0.007 160.06;
+    /* Dark */
+    --_clr-base-fg: 31.7% 0.041 278.04;
+    /* Orange */
+    --_clr-accent: 66.56% 0.22369341581288218 34.32741934960736;
+    /* Red */
+    --_clr-section: 49.79% 0.149 15.29;
+
+    /* COLORS */
+    --color-primary: oklch(var(--_clr-primary));
+    --color-base-bg: oklch(var(--_clr-base-bg));
+    --color-base-fg: oklch(var(--_clr-base-fg));
+    --color-accent: oklch(var(--_clr-accent));
+    --color-section: oklch(var(--_clr-section));
+  }
+
+  /* TODO Replace with proper font face with font weights */
+  body {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Patua One', serif;
+  }
+
+  @media(prefers-color-scheme: dark) {
+    /* :root { */
+    /*   /* COLORS */ */
+    /*   /* TODO Darker primary */ */
+    /*   --color-primary: oklch(var(--_clr-primary)); */
+    /*   --color-base-bg: oklch(var(--_clr-base-fg)); */
+    /*   --color-base-fg: oklch(var(--_clr-base-bg)); */
+    /*   /* TODO Darker accent */ */
+    /*   --color-accent: oklch(var(--_clr-accent)); */
+    /*   /* TODO Darker section */ */
+    /*   --color-section: oklch(var(--_clr-section)); */
+    /* } */
+  }
+}</style>
+		<script></script>
+  </head>
+  <body>
+    Header
+
+    <main><h1 class="sr-only">Creative Spaces for enthusiasts</h1>
+<site-hero></site-hero>
+<p class="hero-body">
+  The web is for everyone! Unleash your creative potential.
+</p>
+</main>
+    <footer>
+  <p>
+    Copyright &copy; 2024 Creative Spaces
+
+  </p>
+</footer>
+
+  
+
+</body>
+</html>
