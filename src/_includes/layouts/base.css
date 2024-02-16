@@ -22,8 +22,6 @@
     min-height: 100%;
     background-color: var(--bg-base);
 
-    /* TODO Is this what I want?  */
-    font-family: "Helvetica Neue", Verdana, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.5rem;
   }
 
@@ -78,22 +76,29 @@
     scroll-behavior: smooth;
   }
 
+  body {
+    font-family: var(--font-base, sans-serif);
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    max-width: 60ch;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading, sans-serif);
+  }
+
   h1 {
     font-size: 2.25rem;
-    line-height: 2.5rem;
     font-weight: 700;
     margin-block-end: 1.5rem;
   }
 
   h2 {
     font-size: 1.5rem;
-    line-height: 2rem;
 
     color: var(--text-secondary);
     font-weight: 700;
-    text-decoration-line: underline;
-    text-decoration-thickness: 4px;
-    text-decoration-color: var(--decoration-secondary-inverted);
     margin-block-end: 0.75rem;
   }
 
@@ -105,10 +110,6 @@
   ul {
     list-style-type: disc;
     list-style-position: inside;
-  }
-
-  ul > li::marker {
-    color: var(--decoration-accent); 
   }
 
   a {
@@ -151,7 +152,6 @@
 
     h2 {
       font-size: 1.875rem;
-      line-height: 2.25rem;
       margin-block-end: 1rem;
     }
   }
@@ -177,15 +177,14 @@
     --color-base-fg: oklch(var(--_clr-base-fg));
     --color-accent: oklch(var(--_clr-accent));
     --color-section: oklch(var(--_clr-section));
-  }
 
-  /* TODO Replace with proper font face with font weights */
-  body {
-    font-family: 'Quicksand', sans-serif;
+    /* FONTS */
+    --font-heading: "Protest Riot";
+    --font-base: "Poppins";
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Patua One', serif;
+  
+  p, ol, ul, li {
+    font-size: 1.125rem;
   }
 
   @media(prefers-color-scheme: dark) {
