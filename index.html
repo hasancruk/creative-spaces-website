@@ -8,7 +8,12 @@
     <meta name="description" content="This is the landing site of the Creative Spaces Community.">
     <meta name="color-scheme" content="dark light">
     
-    <style>@layer reset, base, theme, utilities;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Protest+Riot&amp;display=swap" rel="stylesheet">
+    <style>.wjzw7ts-x{display:block;padding-inline:0.5rem}.wjzw7ts-x section{margin-block-start:20vh;margin-inline:auto;max-width:var(--breakpoint-lg)}.wjzw7ts-x h2{font-size:6.75rem;line-height:0.8;letter-spacing:-0.3rem;margin-block-end:1.5rem}.wjzw7ts-x .hero-body{font-size:2.75rem;line-height:0.8;letter-spacing:-0.3rem}.wjzw7ts-x .hero-tagline{margin-block-start:1.5rem;letter-spacing:-0.05rem;font-style:italic}@media (min-width:768px){.wjzw7ts-x{padding-inline:1rem}.wjzw7ts-x h2{font-size:9rem;margin-block-end:2.25rem}.wjzw7ts-x .hero-body{font-size:2.5rem}.wjzw7ts-x .hero-tagline{margin-block-start:1.75rem}}
+.w_ub0frdq.our-mission-section{margin-block-start:4rem;padding-inline:0.5rem}.w_ub0frdq.our-mission-section>header{max-width:var(--breakpoint-md);margin-inline:auto}.w_ub0frdq.our-mission-section>ul{max-width:var(--breakpoint-lg);margin-inline:auto}.w_ub0frdq.small-heading{font-style:var(--font-base)}@media (min-width:768px){.w_ub0frdq.our-mission-section{margin-block-start:5rem;padding-inline:1rem}.w_ub0frdq.our-mission-section>ul{display:grid;grid-template-columns:1fr 1fr}}
+@layer reset, base, theme, utilities;
 
 @layer reset {
   *, *::before, *::after {
@@ -32,8 +37,6 @@
     min-height: 100%;
     background-color: var(--bg-base);
 
-    /* TODO Is this what I want?  */
-    font-family: "Helvetica Neue", Verdana, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.5rem;
   }
 
@@ -88,22 +91,29 @@
     scroll-behavior: smooth;
   }
 
+  body {
+    font-family: var(--font-base, sans-serif);
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    max-width: 60ch;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading, sans-serif);
+  }
+
   h1 {
     font-size: 2.25rem;
-    line-height: 2.5rem;
     font-weight: 700;
     margin-block-end: 1.5rem;
   }
 
   h2 {
     font-size: 1.5rem;
-    line-height: 2rem;
 
     color: var(--text-secondary);
     font-weight: 700;
-    text-decoration-line: underline;
-    text-decoration-thickness: 4px;
-    text-decoration-color: var(--decoration-secondary-inverted);
     margin-block-end: 0.75rem;
   }
 
@@ -115,10 +125,6 @@
   ul {
     list-style-type: disc;
     list-style-position: inside;
-  }
-
-  ul > li::marker {
-    color: var(--decoration-accent); 
   }
 
   a {
@@ -161,7 +167,6 @@
 
     h2 {
       font-size: 1.875rem;
-      line-height: 2.25rem;
       margin-block-end: 1rem;
     }
   }
@@ -187,15 +192,14 @@
     --color-base-fg: oklch(var(--_clr-base-fg));
     --color-accent: oklch(var(--_clr-accent));
     --color-section: oklch(var(--_clr-section));
-  }
 
-  /* TODO Replace with proper font face with font weights */
-  body {
-    font-family: 'Quicksand', sans-serif;
+    /* FONTS */
+    --font-heading: "Protest Riot";
+    --font-base: "Poppins";
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Patua One', serif;
+  
+  p, ol, ul, li {
+    font-size: 1.125rem;
   }
 
   @media(prefers-color-scheme: dark) {
@@ -217,11 +221,57 @@
   <body>
     Header
 
-    <main><h1 class="sr-only">Creative Spaces for enthusiasts</h1>
-<site-hero></site-hero>
-<p class="hero-body">
-  The web is for everyone! Unleash your creative potential.
-</p>
+    <main><h1 class="sr-only w_ub0frdq">Creative Spaces for enthusiasts</h1>
+<site-hero class="wjzw7ts-x"><section>
+  <h2>Creative Spaces</h2>
+  <p class="hero-body">for enthusiasts</p>
+  <p class="hero-tagline">
+   The web is for everyone! Unleash your creative potential.
+  </p>
+</section>
+
+
+</site-hero>
+<section class="our-mission-section w_ub0frdq">
+  <header class="w_ub0frdq">
+    <h2 class="small-heading w_ub0frdq">Our mission</h2>
+    <p class="w_ub0frdq">Provide a safe space to be creative</p>
+    <p class="w_ub0frdq">A sandbox environment to test new ideas, get feedback, or simply just to be creative.</p>
+  </header>
+
+  <ul class="w_ub0frdq">
+    <li class="w_ub0frdq">
+      <!-- TODO Add icon -->
+      <section class="w_ub0frdq">
+        <h3 class="w_ub0frdq">Unleash your creativity</h3>
+        <p class="w_ub0frdq">Have you wanted to dive deeper into CSS-only animations? Or have you wondered what the limits of building something using no JavaScript?</p>
+      </section>
+    </li>
+    <li class="w_ub0frdq">
+      <!-- TODO Add icon -->
+      <section class="w_ub0frdq">
+        <h3 class="w_ub0frdq">Tinker and experiment</h3>
+        <p class="w_ub0frdq">What if you replaced React for another framework? How does that impact developer experience and user experience in ways that you care?</p>
+      </section>
+    </li>
+    <li class="w_ub0frdq">
+      <!-- TODO Add icon -->
+      <section class="w_ub0frdq">
+        <h3 class="w_ub0frdq">Bring your own project</h3>
+        <p class="w_ub0frdq">Have you been sitting on an App idea for a while? Like a dating app for Chinchillas or a 3D game in React?</p>
+      </section>
+    </li>
+    <li class="w_ub0frdq">
+      <!-- TODO Add icon -->
+      <section class="w_ub0frdq">
+        <h3 class="w_ub0frdq">Collaborate</h3>
+        <p class="w_ub0frdq">Work with someone on a project they've already have started.</p>
+      </section>
+    </li>
+  </ul>
+</section>
+
+
 </main>
     <footer>
   <p>
