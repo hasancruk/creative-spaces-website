@@ -1,0 +1,59 @@
+<section>
+  <h2>Creative Spaces</h2>
+  <p class="hero-body">for enthusiasts</p>
+  <p class="hero-tagline">
+   The web is for everyone! Unleash your creative potential.
+  </p>
+</section>
+
+<style webc:scoped>
+  :host {
+    display: block;
+    padding-inline: 0.5rem;
+  }
+
+  :host(section) {
+    margin-block-start: 20vh;
+
+    margin-inline: auto;
+    max-width: var(--breakpoint-lg);
+  }
+
+  h2 {
+    font-size: 6.75rem;
+    line-height: 0.8;
+    letter-spacing: -0.3rem;
+    margin-block-end: 1.5rem;
+  }
+
+  .hero-body {
+    font-size: 2.75rem;
+    line-height: 0.8;
+    letter-spacing: -0.3rem;
+  }
+
+  .hero-tagline {
+    margin-block-start: 1.5rem;
+    letter-spacing: -0.05rem;
+    font-style: italic;
+  }
+
+  @media(min-width: 768px) {
+    :host {
+      padding-inline: 1rem;
+    }
+
+    h2 {
+      font-size: 9rem;
+      margin-block-end: 2.25rem;
+    }
+
+    .hero-body {
+      font-size: 2.5rem;
+    }
+    
+    .hero-tagline {
+      margin-block-start: 1.75rem;
+    }
+  }
+</style>
