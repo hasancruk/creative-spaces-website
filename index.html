@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Protest+Riot&amp;display=swap" rel="stylesheet">
-    <style>.wjzw7ts-x{display:block;padding-inline:0.5rem}.wjzw7ts-x section{margin-block-start:20vh;margin-inline:auto;max-width:var(--breakpoint-lg)}.wjzw7ts-x h2{font-size:6.75rem;line-height:0.8;letter-spacing:-0.3rem;margin-block-end:1.5rem}.wjzw7ts-x .hero-body{font-size:2.75rem;line-height:0.8;letter-spacing:-0.3rem}.wjzw7ts-x .hero-tagline{margin-block-start:1.5rem;letter-spacing:-0.05rem;font-style:italic}@media (min-width:768px){.wjzw7ts-x{padding-inline:1rem}.wjzw7ts-x h2{font-size:9rem;margin-block-end:2.25rem}.wjzw7ts-x .hero-body{font-size:2.5rem}.wjzw7ts-x .hero-tagline{margin-block-start:1.75rem}}
-.w_ub0frdq.our-mission-section{margin-block-start:4rem;padding-inline:0.5rem}.w_ub0frdq.our-mission-section>header{max-width:var(--breakpoint-md);margin-inline:auto}.w_ub0frdq.our-mission-section>ul{max-width:var(--breakpoint-lg);margin-inline:auto}.w_ub0frdq.small-heading{font-style:var(--font-base)}@media (min-width:768px){.w_ub0frdq.our-mission-section{margin-block-start:5rem;padding-inline:1rem}.w_ub0frdq.our-mission-section>ul{display:grid;grid-template-columns:1fr 1fr}}
+    <style>.wrmkmk-_w{display:block;padding-inline:0.5rem}.wrmkmk-_w section{margin-block-start:20vh;margin-inline:auto;max-width:var(--breakpoint-lg)}.wrmkmk-_w h2{font-size:clamp(4.5rem,12vw + 1rem,9rem);line-height:0.8;letter-spacing:-0.3rem;margin-block-end:1.5rem}.wrmkmk-_w .hero-body{font-size:clamp(2.5rem,6vw + 1rem,5rem);line-height:0.8;letter-spacing:-0.3rem}.wrmkmk-_w .hero-tagline{margin-block-start:1.5rem;letter-spacing:-0.05rem;font-style:italic}@media (min-width:768px){.wrmkmk-_w{padding-inline:1rem}.wrmkmk-_w h2{margin-block-end:2.25rem}.wrmkmk-_w .hero-tagline{margin-block-start:1.75rem}}
+.w-rh6w7bb li{list-style:none}.w-rh6w7bb.our-mission-section{margin-block-start:4rem;padding-inline:0.5rem;display:grid;gap:clamp(1.875rem,6vw + 1rem,3rem)}.w-rh6w7bb.our-mission-section>header{max-width:var(--breakpoint-md);margin-inline:auto}.w-rh6w7bb.our-mission-section>ul{max-width:var(--breakpoint-lg);margin-inline:auto;display:grid;gap:clamp(1rem,1vw + 1rem,2.5rem)}.w-rh6w7bb.small-heading{font-style:var(--font-base)}@media (min-width:768px){.w-rh6w7bb.our-mission-section{margin-block-start:5rem;padding-inline:1rem}.w-rh6w7bb.our-mission-section>ul{grid-template-columns:1fr 1fr}}
 @layer reset, base, theme, utilities;
 
 @layer reset {
@@ -104,17 +104,22 @@
   }
 
   h1 {
-    font-size: 2.25rem;
+    font-size: clamp(2.25rem, 3vw + 1rem, 5rem);
     font-weight: 700;
     margin-block-end: 1.5rem;
   }
 
   h2 {
-    font-size: 1.5rem;
-
+    font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
     color: var(--text-secondary);
     font-weight: 700;
     margin-block-end: 0.75rem;
+  }
+
+  h3 {
+    font-size: clamp(1rem, 0.5vw + 1rem, 1.5rem);
+    font-weight: 700;
+    margin-block-end: 0.5rem;
   }
 
   ol {
@@ -160,13 +165,11 @@
 
   @media(min-width: 768px) {
     h1 {
-      font-size: 3rem;
       line-height: 1;
       margin-block-end: 2rem;
     }
 
     h2 {
-      font-size: 1.875rem;
       margin-block-end: 1rem;
     }
   }
@@ -221,51 +224,51 @@
   <body>
     Header
 
-    <main><h1 class="sr-only w_ub0frdq">Creative Spaces for enthusiasts</h1>
-<site-hero class="wjzw7ts-x"><section>
+    <main><h1 class="sr-only w-rh6w7bb">Creative Spaces for enthusiasts</h1>
+<site-hero class="wrmkmk-_w"><section>
   <h2>Creative Spaces</h2>
   <p class="hero-body">for enthusiasts</p>
   <p class="hero-tagline">
-   The web is for everyone! Unleash your creative potential.
+   Technology is for everyone! Unleash your creative potential.
   </p>
 </section>
 
 
 </site-hero>
-<section class="our-mission-section w_ub0frdq">
-  <header class="w_ub0frdq">
-    <h2 class="small-heading w_ub0frdq">Our mission</h2>
-    <p class="w_ub0frdq">Provide a safe space to be creative</p>
-    <p class="w_ub0frdq">A sandbox environment to test new ideas, get feedback, or simply just to be creative.</p>
+<section class="our-mission-section w-rh6w7bb">
+  <header class="w-rh6w7bb">
+    <h2 class="small-heading w-rh6w7bb">Our mission</h2>
+    <p class="w-rh6w7bb">Provide a safe space to be creative</p>
+    <p class="w-rh6w7bb">A sandbox environment to test new ideas, get feedback, or simply just to be creative.</p>
   </header>
 
-  <ul class="w_ub0frdq">
-    <li class="w_ub0frdq">
+  <ul class="w-rh6w7bb">
+    <li class="w-rh6w7bb">
       <!-- TODO Add icon -->
-      <section class="w_ub0frdq">
-        <h3 class="w_ub0frdq">Unleash your creativity</h3>
-        <p class="w_ub0frdq">Have you wanted to dive deeper into CSS-only animations? Or have you wondered what the limits of building something using no JavaScript?</p>
+      <section class="w-rh6w7bb">
+        <h3 class="w-rh6w7bb">Unleash your creativity</h3>
+        <p class="w-rh6w7bb">Have you wanted to dive deeper into CSS-only animations? Or have you wondered what the limits of building something using no JavaScript?</p>
       </section>
     </li>
-    <li class="w_ub0frdq">
+    <li class="w-rh6w7bb">
       <!-- TODO Add icon -->
-      <section class="w_ub0frdq">
-        <h3 class="w_ub0frdq">Tinker and experiment</h3>
-        <p class="w_ub0frdq">What if you replaced React for another framework? How does that impact developer experience and user experience in ways that you care?</p>
+      <section class="w-rh6w7bb">
+        <h3 class="w-rh6w7bb">Tinker and experiment</h3>
+        <p class="w-rh6w7bb">What if you replaced React for another framework? How does that impact developer experience and user experience in ways that you care?</p>
       </section>
     </li>
-    <li class="w_ub0frdq">
+    <li class="w-rh6w7bb">
       <!-- TODO Add icon -->
-      <section class="w_ub0frdq">
-        <h3 class="w_ub0frdq">Bring your own project</h3>
-        <p class="w_ub0frdq">Have you been sitting on an App idea for a while? Like a dating app for Chinchillas or a 3D game in React?</p>
+      <section class="w-rh6w7bb">
+        <h3 class="w-rh6w7bb">Bring your own project</h3>
+        <p class="w-rh6w7bb">Have you been sitting on an App idea for a while? Like a dating app for Chinchillas or a 3D game in React?</p>
       </section>
     </li>
-    <li class="w_ub0frdq">
+    <li class="w-rh6w7bb">
       <!-- TODO Add icon -->
-      <section class="w_ub0frdq">
-        <h3 class="w_ub0frdq">Collaborate</h3>
-        <p class="w_ub0frdq">Work with someone on a project they've already have started.</p>
+      <section class="w-rh6w7bb">
+        <h3 class="w-rh6w7bb">Collaborate</h3>
+        <p class="w-rh6w7bb">Work with someone on a project they've already have started.</p>
       </section>
     </li>
   </ul>
