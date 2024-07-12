@@ -43,9 +43,16 @@ layout: layouts/base.webc
 </section>
 
 <style webc:scoped>
+  li {
+    list-style: none;
+  }
+
   :host(.our-mission-section) {
     margin-block-start: 4rem;
     padding-inline: 0.5rem;
+
+    display: grid;
+    gap: clamp(1.875rem, 6vw + 1rem, 3rem);
   }
 
   :host(.our-mission-section > header) {
@@ -56,6 +63,9 @@ layout: layouts/base.webc
   :host(.our-mission-section > ul) {
     max-width: var(--breakpoint-lg);
     margin-inline: auto;
+
+    display: grid;
+    gap: clamp(1rem, 1vw + 1rem, 2.5rem);
   }
 
   :host(.small-heading) {
@@ -69,7 +79,6 @@ layout: layouts/base.webc
     }
 
     :host(.our-mission-section > ul) {
-      display: grid;
       grid-template-columns: 1fr 1fr;
     }
   }
