@@ -3,16 +3,64 @@
     <ul>
       <li><a href="/projects">Projects</a></li>
       <li><a href="/blog">Blog</a></li>
-      <li><a href="/github">GitHub</a></li>
+      <li><a href="https://github.com/crUKorg/creative-spaces-community" target="_blank">GitHub</a></li>
     </ul>
     <search>
       <form action="/search">
       <label>
         <span class="sr-only">Search</span>
-        <input type="search" id="search" name="q" />
+        <input type="search" id="search" name="q">
       </label>
       <button type="submit">Search</button>
     </form>
     </search>
   </nav>
 </header>
+
+<style webc:scoped>
+  :host(header) {
+    padding-inline: 0.5rem;
+    padding-block: 0.5rem;
+
+    @media(min-width: 768px) {
+      padding-inline: 1rem;
+    }
+  }
+
+  :host(header search) {
+    display: none;
+  }
+
+  :host(nav) {
+    display: flex; 
+    justify-content: space-between;
+    max-width: var(--breakpoint-lg);
+    margin-inline: auto;
+  }
+
+  :host(nav ul) {
+    display: flex; 
+    gap: 1rem;
+  }
+
+  :host(nav li) {
+    list-style: none; 
+  }
+
+  :host(nav a) {
+    font-size: 1.125rem;
+
+    @media(min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  :host(nav a) {
+    text-decoration: none;
+    font-weight: 400;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+</style>

@@ -33,7 +33,7 @@
     background-color: var(--color-primary);
     padding-inline: 1rem;
     padding-block: 0.875rem;
-    border-radius: 0.25rem;
+    border-radius: var(--radius-sm);
     display: inline-block;
   }
 
