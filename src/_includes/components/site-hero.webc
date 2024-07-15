@@ -30,6 +30,11 @@
     font-size: clamp(2.5rem, 6vw + 1rem, 5rem);
     line-height: 0.8;
     letter-spacing: -0.3rem;
+    background-color: var(--color-primary);
+    padding-inline: 1rem;
+    padding-block: 0.875rem;
+    border-radius: 0.25rem;
+    display: inline-block;
   }
 
   .hero-tagline {

@@ -18,7 +18,8 @@
 		<script @raw="getBundle('js')" webc:keep></script>
   </head>
   <body>
-    <site-header></site-header>
+    <!-- TODO Implement site header and link to new content -->
+    <!-- <site-header></site-header> -->
     <main @html="this.content"></main>
     <site-footer></site-footer>
   </body>
