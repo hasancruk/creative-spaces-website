@@ -1,0 +1,44 @@
+---
+layout: layouts/base.webc
+---
+<script webc:setup>
+  function getH1toH2(content) {
+    const regex = /<h1\b[^>]*>.*?(?=<h2\b|$)/;
+    const match = content.match(regex);
+    return match?.[0];
+  }
+
+  function getAllSections(content) {
+    const regex = /<h2\b[^>]*>.*?(?=<h2\b|$)/g;
+    const matches = [...content.matchAll(regex)];
+    return matches
+      .map(match => match[0])
+      .map(body => `<section>${body}</section>`)
+      .join("");
+  }
+
+  function extractContent(content) {
+    const topSection = getH1toH2(content);
+    const remainingContent = content.replace(topSection, "");
+    const allSections = getAllSections(remainingContent);
+    
+    return {
+      topSection,
+      allSections,
+    };
+  }
+
+  function getContent(content) {
+    const trimmedContent = content.replaceAll("\n", "");
+    const { topSection, allSections } = extractContent(trimmedContent);
+
+    return `
+      ${topSection}
+      <article>
+        ${allSections}
+      </article>
+    `;
+  }
+</script>
+
+<template webc:root @html="getContent(this.content)"></template>

@@ -1,0 +1,60 @@
+---
+layout: layouts/content.webc
+title: Community
+---
+<script webc:bucket="defer">
+  const toggle = document.getElementById("idea-toggle");
+  const dialog = document.getElementById("idea-dialog");
+  
+  toggle.addEventListener("click", () => {
+    dialog.showModal();
+  });
+  import "/scripts/cruk-textarea.js";
+</script>
+
+<template webc:type="11ty" 11ty:type="liquid,md">
+# Projects
+
+Here are some of the projects from the Creative Spaces community:
+
+- This site
+</template>
+
+<button id="idea-toggle">Submit an idea</button>
+<dialog id="idea-dialog">
+  <form method="dialog">
+    <label>
+      <span>Idea</span>
+      <cruk-textarea>
+        <textarea name="idea"></textarea> 
+      </cruk-textarea>
+      <button type="submit">Send</button>
+    </label>
+  </form>
+</dialog>
+
+<template webc:type="11ty" 11ty:type="liquid,md">
+## Inspiration
+
+- Cassie Codes
+- Raspberry Pi
+</template>
+
+<style webc:scoped>
+  :host(#idea-dialog) {
+    border: 0.15rem solid #212121;
+    border-radius: 1rem;
+    width: 85%;
+    max-width: 35rem;
+  }
+
+  :host(#idea-dialog > form > *) {
+    display: block;
+    margin-block: 0.8rem;
+  }
+
+  :host(#idea-dialog > form > div) {
+    margin-block-end: 1.5rem;
+    display: grid;
+  }
+</style>

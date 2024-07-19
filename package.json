@@ -12,6 +12,7 @@
     "@11ty/eleventy": "^2.0.1"
   },
   "dependencies": {
-    "@11ty/eleventy-plugin-webc": "^0.11.1"
+    "@11ty/eleventy-plugin-webc": "^0.11.1",
+    "@hasancruk/cruk-textarea": "^0.1.0"
   }
 }

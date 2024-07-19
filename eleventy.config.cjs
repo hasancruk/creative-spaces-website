@@ -5,7 +5,10 @@ module.exports = function(eleventyConfig) {
     components: "./src/_includes/components/**/*.webc"
   });
 
-  eleventyConfig.addPassthroughCopy({"public": "assets"});
+  eleventyConfig.addPassthroughCopy({
+    "public": "assets",
+    "./node_modules/@hasancruk/cruk-textarea/cruk-textarea.js": "scripts/cruk-textarea.js",
+  });
 
   return {
     dir: {
