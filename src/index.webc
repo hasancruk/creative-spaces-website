@@ -1,0 +1,85 @@
+---
+layout: layouts/base.webc
+---
+<h1 class="sr-only">Creative Spaces for enthusiasts</h1>
+<site-hero></site-hero>
+<section class="our-mission-section">
+  <header>
+    <h2 class="small-heading">Our mission</h2>
+    <p>Provide a safe space to be creative</p>
+    <p>A sandbox environment to test new ideas, get feedback, or simply just to be creative.</p>
+  </header>
+
+  <ul>
+    <li>
+      <!-- TODO Add icon -->
+      <section>
+        <h3>Unleash your creativity</h3>
+        <p>Have you wanted to dive deeper into CSS-only animations? Or have you wondered what the limits of building something using no JavaScript?</p>
+      </section>
+    </li>
+    <li>
+      <!-- TODO Add icon -->
+      <section>
+        <h3>Tinker and experiment</h3>
+        <p>What if you replaced React for another framework? How does that impact developer experience and user experience in ways that you care?</p>
+      </section>
+    </li>
+    <li>
+      <!-- TODO Add icon -->
+      <section>
+        <h3>Bring your own project</h3>
+        <p>Have you been sitting on an App idea for a while? Like a dating app for Chinchillas or a 3D game in React?</p>
+      </section>
+    </li>
+    <li>
+      <!-- TODO Add icon -->
+      <section>
+        <h3>Collaborate</h3>
+        <p>Work with someone on a project they've already have started.</p>
+      </section>
+    </li>
+  </ul>
+</section>
+
+<style webc:scoped>
+  li {
+    list-style: none;
+  }
+
+  :host(.our-mission-section) {
+    margin-block-start: 4rem;
+    padding-inline: 0.5rem;
+
+    display: grid;
+    gap: clamp(1.875rem, 6vw + 1rem, 3rem);
+  }
+
+  :host(.our-mission-section > header) {
+    max-width: var(--breakpoint-md);
+    margin-inline: auto;
+  }
+  
+  :host(.our-mission-section > ul) {
+    max-width: var(--breakpoint-lg);
+    margin-inline: auto;
+
+    display: grid;
+    gap: clamp(1rem, 1vw + 1rem, 2.5rem);
+  }
+
+  :host(.small-heading) {
+    font-style: var(--font-base);
+  }
+
+  @media(min-width: 768px) {
+    :host(.our-mission-section) {
+      margin-block-start: 5rem;
+      padding-inline: 1rem;
+    }
+
+    :host(.our-mission-section > ul) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
