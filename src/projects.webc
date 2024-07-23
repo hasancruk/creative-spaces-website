@@ -5,10 +5,21 @@ title: Community
 <script webc:bucket="defer">
   const toggle = document.getElementById("idea-toggle");
   const dialog = document.getElementById("idea-dialog");
+  const dialogForm = document.querySelector("#idea-dialog > form");
+  const dialogCancelButton = document.querySelector("[data-action='cancel']");
   
   toggle.addEventListener("click", () => {
     dialog.showModal();
   });
+
+  dialog.addEventListener("close", (e) => {
+    dialogForm.reset();
+  });
+  
+  dialogCancelButton.addEventListener("click", () => {
+    dialog.close();
+  });
+
   import "/scripts/cruk-textarea.js";
 </script>
 
@@ -28,8 +39,11 @@ Here are some of the projects from the Creative Spaces community:
       <cruk-textarea>
         <textarea name="idea"></textarea> 
       </cruk-textarea>
-      <button type="submit">Send</button>
     </label>
+    <span class="button-group">
+      <button type="button" data-action="cancel">Cancel</button>
+      <button type="submit">Send</button>
+    </span>
   </form>
 </dialog>
 
@@ -41,20 +55,9 @@ Here are some of the projects from the Creative Spaces community:
 </template>
 
 <style webc:scoped>
-  :host(#idea-dialog) {
-    border: 0.15rem solid #212121;
-    border-radius: 1rem;
-    width: 85%;
-    max-width: 35rem;
-  }
-
-  :host(#idea-dialog > form > *) {
-    display: block;
-    margin-block: 0.8rem;
-  }
-
-  :host(#idea-dialog > form > div) {
-    margin-block-end: 1.5rem;
-    display: grid;
+  .button-group {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
   }
 </style>
