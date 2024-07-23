@@ -42,3 +42,18 @@ layout: layouts/base.webc
 </script>
 
 <template webc:root @html="getContent(this.content)"></template>
+
+<style>
+  main {
+    padding-inline: 0.5rem;
+    max-width: var(--breakpoint-lg);
+    margin-inline: auto;
+    margin-block-start: 1.5rem;
+    width: 100%;
+
+    @media(min-width: 768px) {
+      padding-inline: 1rem;
+      margin-block-start: 2rem;
+    }
+  }
+</style>
