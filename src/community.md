@@ -2,7 +2,7 @@
 layout: layouts/content.webc
 title: Community
 ---
-<h1 class="sr-only">Creative Spaces Community</h1>
+# Creative Spaces Community
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](/conduct) 
 
