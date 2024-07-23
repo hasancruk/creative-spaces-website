@@ -170,6 +170,20 @@
     margin-block-end: 1rem;
   }
 
+  dialog {
+    margin: auto;
+    padding: 1rem;
+
+    & > form > *, & > form label > span {
+      display: block;
+      margin-block: 0.8rem;
+    }
+
+    & > form > *:last-child {
+      margin-block-start: 1.8rem;
+    }
+  }
+
   .sr-only {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -209,6 +223,54 @@
   
   p, ol, ul, li {
     font-size: 1.125rem;
+  }
+  
+  dialog {
+    border: 0.15rem solid #212121;
+    border-radius: 1rem;
+    width: 85%;
+    max-width: 35rem;
+
+    font-size: 1.125rem;
+    background-color: var(--color-base-bg);
+    color: inherit;
+  }
+
+  dialog textarea {
+    background-color: var(--color-base-bg);
+    color: inherit;
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  button {
+    background-color: var(--color-base-bg);
+    color: inherit;
+    border: 0.15rem solid var(--color-base-fg);
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    margin-inline: 0.2rem;
+    margin-block: 0.2rem;
+    border-radius: 0.4rem;
+    box-shadow: 0.15rem 0.15rem var(--color-base-fg);
+
+    transition: box-shadow 75ms ease-in-out;
+  }
+
+  button[type="submit"], button.primary {
+    background-color: var(--color-accent);
+    color: var(--color-base-bg);
+    border: none;
+  }
+
+  button:hover {
+    filter: brightness(0.8);
+  }
+
+  button:active {
+    box-shadow: 0 0 var(--color-base-fg);
+    transform: translateY(0.075rem) translateX(0.075rem);
   }
 
   @media(prefers-color-scheme: dark) {

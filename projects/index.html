@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Protest+Riot&amp;display=swap" rel="stylesheet">
-    <style>.wlo1cpe6d#idea-dialog{border:0.15rem solid #212121;border-radius:1rem;width:85%;max-width:35rem}.wlo1cpe6d#idea-dialog>form>*{display:block;margin-block:0.8rem}.wlo1cpe6d#idea-dialog>form>div{margin-block-end:1.5rem;display:grid}
+    <style>.w54cgglxw .button-group{display:flex;gap:0.5rem;justify-content:flex-end}
 main {
     padding-inline: 0.5rem;
     max-width: var(--breakpoint-lg);
@@ -198,6 +198,20 @@ main {
     margin-block-end: 1rem;
   }
 
+  dialog {
+    margin: auto;
+    padding: 1rem;
+
+    & > form > *, & > form label > span {
+      display: block;
+      margin-block: 0.8rem;
+    }
+
+    & > form > *:last-child {
+      margin-block-start: 1.8rem;
+    }
+  }
+
   .sr-only {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -237,6 +251,54 @@ main {
   
   p, ol, ul, li {
     font-size: 1.125rem;
+  }
+  
+  dialog {
+    border: 0.15rem solid #212121;
+    border-radius: 1rem;
+    width: 85%;
+    max-width: 35rem;
+
+    font-size: 1.125rem;
+    background-color: var(--color-base-bg);
+    color: inherit;
+  }
+
+  dialog textarea {
+    background-color: var(--color-base-bg);
+    color: inherit;
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  button {
+    background-color: var(--color-base-bg);
+    color: inherit;
+    border: 0.15rem solid var(--color-base-fg);
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    margin-inline: 0.2rem;
+    margin-block: 0.2rem;
+    border-radius: 0.4rem;
+    box-shadow: 0.15rem 0.15rem var(--color-base-fg);
+
+    transition: box-shadow 75ms ease-in-out;
+  }
+
+  button[type="submit"], button.primary {
+    background-color: var(--color-accent);
+    color: var(--color-base-bg);
+    border: none;
+  }
+
+  button:hover {
+    filter: brightness(0.8);
+  }
+
+  button:active {
+    box-shadow: 0 0 var(--color-base-fg);
+    transform: translateY(0.075rem) translateX(0.075rem);
   }
 
   @media(prefers-color-scheme: dark) {
@@ -278,9 +340,9 @@ main {
 
 
 </site-header>
-    <main><h1 class="wlo1cpe6d">Projects</h1><p class="wlo1cpe6d">Here are some of the projects from the Creative Spaces community:</p><ul class="wlo1cpe6d"><li class="wlo1cpe6d">This site</li></ul><button id="idea-toggle" class="wlo1cpe6d">Submit an idea</button><dialog id="idea-dialog" class="wlo1cpe6d">  <form method="dialog" class="wlo1cpe6d">    <label class="wlo1cpe6d">      <span class="wlo1cpe6d">Idea</span>      <cruk-textarea class="wlo1cpe6d">        <textarea name="idea" class="wlo1cpe6d"></textarea>       </cruk-textarea>      <button type="submit" class="wlo1cpe6d">Send</button>    </label>  </form></dialog>
+    <main><h1 class="w54cgglxw">Projects</h1><p class="w54cgglxw">Here are some of the projects from the Creative Spaces community:</p><ul class="w54cgglxw"><li class="w54cgglxw">This site</li></ul><button id="idea-toggle" class="w54cgglxw">Submit an idea</button><dialog id="idea-dialog" class="w54cgglxw">  <form method="dialog" class="w54cgglxw">    <label class="w54cgglxw">      <span class="w54cgglxw">Idea</span>      <cruk-textarea class="w54cgglxw">        <textarea name="idea" class="w54cgglxw"></textarea>       </cruk-textarea>    </label>    <span class="button-group w54cgglxw">      <button type="button" data-action="cancel" class="w54cgglxw">Cancel</button>      <button type="submit" class="w54cgglxw">Send</button>    </span>  </form></dialog>
       <article>
-        <section><h2 class="wlo1cpe6d">Inspiration</h2><ul class="wlo1cpe6d"><li class="wlo1cpe6d">Cassie Codes</li><li class="wlo1cpe6d">Raspberry Pi</li></ul></section>
+        <section><h2 class="w54cgglxw">Inspiration</h2><ul class="w54cgglxw"><li class="w54cgglxw">Cassie Codes</li><li class="w54cgglxw">Raspberry Pi</li></ul></section>
       </article>
     
 
@@ -295,10 +357,21 @@ main {
 
     <script type="module">const toggle = document.getElementById("idea-toggle");
   const dialog = document.getElementById("idea-dialog");
+  const dialogForm = document.querySelector("#idea-dialog > form");
+  const dialogCancelButton = document.querySelector("[data-action='cancel']");
   
   toggle.addEventListener("click", () => {
     dialog.showModal();
   });
+
+  dialog.addEventListener("close", (e) => {
+    dialogForm.reset();
+  });
+  
+  dialogCancelButton.addEventListener("click", () => {
+    dialog.close();
+  });
+
   import "/scripts/cruk-textarea.js";</script>
   
 
